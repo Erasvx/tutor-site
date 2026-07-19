@@ -1,38 +1,42 @@
-:root {
-  --board-size: 400px;
-  --field-size: calc(var(--board-size) / 3);
-  --player-size: calc(var(--field-size) * 0.8);
-  --player-offset: calc((var(--field-size) - var(--player-size)) / 2) ;
-}
-
 .game {
   position: relative;
   background-color: bisque;
+  min-width: 300px;
+  max-width: 300px;
 }
-
 .game__player {
   position: absolute;
-  left: var(--player-offset);
-  top: var(--player-offset);
+  left: 10px;
+  top: 10px;
 }
-
+.game__player--row_1 {
+  top: 10px;
+}
+.game__player--col_1 {
+  left: 10px;
+}
 .game__player--row_2 {
-  top: calc(var(--field-size) * 1 + var(--player-offset));
+  top: 110px;
 }
-
 .game__player--col_2 {
-  left: calc(var(--field-size) * 1 + var(--player-offset));
+  left: 110px;
+}
+.game__player--row_3 {
+  top: 210px;
+}
+.game__player--col_3 {
+  left: 210px;
 }
 
 .board {
   display: flex;
   flex-wrap: wrap;
-  width: var(--board-size);
+  width: 300px;
 }
 
 .board__field {
-  width: var(--field-size);
-  height: var(--field-size);
+  width: 100px;
+  height: 100px;
   border: 1px solid black;
   box-sizing: border-box;
   display: flex;
@@ -41,10 +45,23 @@
 }
 
 .player {
-  width: var(--player-size);
-  height: var(--player-size);
-  background-color: black;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
+  background-color: black;
+  box-sizing: border-box;
+  border: 5px solid black;
+}
+.player--level_1 {
+  border-width: 4px;
+  border-color: white;
+  border-style: solid;
+  opacity: 0.5;
+}
+.player--level_2 {
+  border-width: 4px;
+  border-color: white;
+  border-style: dotted;
 }
 
 .player--one {
@@ -53,6 +70,10 @@
 
 .player--two {
   background-color: blue;
+}
+
+.player--three {
+  background-color: green;
 }
 
 /*# sourceMappingURL=styles.css.map */

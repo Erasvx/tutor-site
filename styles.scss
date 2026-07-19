@@ -1,42 +1,54 @@
-$board-size: 400px;
+$board-size: 300px;
+$field-size: calc($board-size / 3);
+$player-size: $field-size * 0.8;
+$player-offset: calc(($field-size - $player-size) / 2);
 
+@function getShift($i) {
+    @return calc($field-size * ($i - 1) + $player-offset);
+}
 
-:root {
-    --board-size: #{$board-size};
-    --field-size: calc(var(--board-size) / 3);
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
 
-    --player-size: calc(var(--field-size) * 0.8);
-    --player-offset: calc((var(--field-size) - var(--player-size)) / 2)
+@mixin circle($size) {
+    @include square($size);
+
+    border-radius: 50%;
 }
 
 .game {
     position: relative;
     background-color: bisque;
-}
+    min-width: $board-size;
+    max-width: $board-size;
 
-.game__player {
-    position: absolute;
-    left: var(--player-offset);
-    top: var(--player-offset);
-}
+    &__player {
+        position: absolute;
+        left: $player-offset;
+        top: $player-offset;
 
-.game__player--row_2 {
-    top: calc(var(--field-size) * 1 + var(--player-offset));
-}
+        @for $index from 1 through 3 {
+            &--row_#{$index} {
+                top: getShift($index);
+            }
 
-.game__player--col_2 {
-    left: calc(var(--field-size) * 1 + var(--player-offset));
+            &--col_#{$index} {
+                left: getShift($index);
+            }
+        }
+    }  
 }
 
 .board {
     display: flex;
     flex-wrap: wrap;
-    width: var(--board-size);
+    width: $board-size;
 }
 
 .board__field {
-    width: var(--field-size);
-    height: var(--field-size);
+    @include square($field-size);
     border: 1px solid black;
     box-sizing: border-box;
     display: flex;
@@ -45,16 +57,33 @@ $board-size: 400px;
 }
 
 .player {
-    width: var(--player-size);
-    height: var(--player-size);
+    @include circle($player-size);
+
     background-color: black;
-    border-radius: 50%;
+    box-sizing: border-box;
+    border: 5px solid black;
+
+    &--level_1 {
+        border-width: 4px;
+        border-color: white;
+        border-style: solid;
+        opacity: 0.5;
+    }
+
+    &--level_2 {
+        border-width: 4px;
+        border-color: white;
+        border-style: dotted;
+    }
 }
 
-.player--one {
-    background-color: red;
-}
+$colors:
+    'one' red,
+    'two' blue,
+    'three' green;
 
-.player--two {
-    background-color: blue;
+@each $name, $color in $colors {
+    .player--#{$name} {
+        background-color: $color;
+    }   
 }
