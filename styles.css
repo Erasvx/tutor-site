@@ -34,7 +34,6 @@
   flex-wrap: wrap;
   width: 100%;
 }
-
 .board__field {
   width: 100px;
   height: 100px;
@@ -54,27 +53,25 @@
   border: 5px solid black;
 }
 .player--level_1 {
-  border-width: 4px;
-  border-color: white;
   border-style: solid;
   opacity: 0.5;
 }
 .player--level_2 {
-  border-width: 4px;
-  border-color: white;
   border-style: dotted;
 }
-
 .player--one {
   background-color: red;
 }
-
 .player--two {
   background-color: blue;
 }
-
 .player--three {
   background-color: green;
+}
+
+.player--level_1, .player--level_2 {
+  border-width: 4px;
+  border-color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */
