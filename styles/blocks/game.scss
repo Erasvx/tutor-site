@@ -1,0 +1,26 @@
+@use '../utils/variables';
+@use '../utils/functions';
+
+.game {
+    position: relative;
+    background-color: goldenrod;
+    width: 100%;
+    max-width: variables.$board-size;
+    margin: 0 auto;
+
+    &__player {
+        position: absolute;
+        left: variables.$player-offset;
+        top: variables.$player-offset;
+
+        @for $index from 1 through 3 {
+            &--row_#{$index} {
+                top: functions.getShift($index);
+            }
+
+            &--col_#{$index} {
+                left: functions.getShift($index);
+            }
+        }
+    }  
+}

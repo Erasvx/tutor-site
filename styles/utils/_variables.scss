@@ -1,0 +1,4 @@
+$board-size: 300px;
+$field-size: calc($board-size / 3);
+$player-size: $field-size * 0.8;
+$player-offset: calc(($field-size - $player-size) / 2);

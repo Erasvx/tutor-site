@@ -1,0 +1,5 @@
+@use './variables';
+
+@function getShift($i) {
+    @return calc(variables.$field-size * ($i - 1) + variables.$player-offset);
+}

@@ -1,0 +1,81 @@
+.game {
+  position: relative;
+  background-color: red;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.game__player {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.game__player--row_1 {
+  top: 10px;
+}
+.game__player--col_1 {
+  left: 10px;
+}
+.game__player--row_2 {
+  top: 110px;
+}
+.game__player--col_2 {
+  left: 110px;
+}
+.game__player--row_3 {
+  top: 210px;
+}
+.game__player--col_3 {
+  left: 210px;
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.board__field {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: black;
+  box-sizing: border-box;
+  border: 5px solid black;
+}
+.player--level_1 {
+  border-style: solid;
+  opacity: 0.5;
+}
+.player--level_2 {
+  border-style: dotted;
+}
+
+.player--level_1, .player--level_2 {
+  border-width: 4px;
+  border-color: white;
+}
+
+.player--one {
+  background-color: red;
+}
+
+.player--two {
+  background-color: blue;
+}
+
+.player--three {
+  background-color: green;
+}
+
+/*# sourceMappingURL=style.css.map */
