@@ -20,9 +20,10 @@ $player-offset: calc(($field-size - $player-size) / 2);
 
 .game {
     position: relative;
-    background-color: aqua;
-    min-width: $board-size;
+    background-color: goldenrod;
+    width: 100%;
     max-width: $board-size;
+    margin: 0 auto;
 
     &__player {
         position: absolute;
@@ -44,7 +45,7 @@ $player-offset: calc(($field-size - $player-size) / 2);
 .board {
     display: flex;
     flex-wrap: wrap;
-    width: $board-size;
+    width: 100%;
 }
 
 .board__field {

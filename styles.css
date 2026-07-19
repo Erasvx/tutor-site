@@ -1,8 +1,9 @@
 .game {
   position: relative;
-  background-color: aqua;
-  min-width: 300px;
+  background-color: goldenrod;
+  width: 100%;
   max-width: 300px;
+  margin: 0 auto;
 }
 .game__player {
   position: absolute;
@@ -31,7 +32,7 @@
 .board {
   display: flex;
   flex-wrap: wrap;
-  width: 300px;
+  width: 100%;
 }
 
 .board__field {
