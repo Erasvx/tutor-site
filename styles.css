@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(92, 76, 76);
+}
+
 .game {
   position: relative;
   background-color: goldenrod;
@@ -28,16 +32,23 @@
 .game__player--col_3 {
   left: 210px;
 }
+@media (min-width: 300px) {
+  .game {
+    background-color: red;
+  }
+}
 
 .board {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  box-shadow: 5px 5px 30px rgba(255, 233, 29, 0.7);
 }
 .board__field {
   width: 100px;
   height: 100px;
   border: 1px solid black;
+  border-radius: 5%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -60,13 +71,21 @@
   border-style: dotted;
 }
 .player--one {
-  background-color: red;
+  background-color: aqua;
 }
 .player--two {
   background-color: blue;
 }
 .player--three {
   background-color: green;
+}
+.player:hover {
+  transition: all 0.5s;
+  transition-delay: 0.03s;
+  background-color: rgb(12, 53, 189);
+  opacity: 1;
+  border: none;
+  cursor: pointer;
 }
 
 .player--level_1, .player--level_2 {

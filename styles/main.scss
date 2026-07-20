@@ -1,3 +1,7 @@
-@use './blocks/game.scss';
-@use './blocks/board.scss';
-@use './blocks/player.scss';
+@import './utils/variables';
+@import './utils/mixins';
+@import './utils/functions';
+
+@import './blocks/game.scss';
+@import './blocks/board.scss';
+@import './blocks/player.scss';

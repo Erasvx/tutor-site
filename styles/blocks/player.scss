@@ -1,8 +1,5 @@
-@use '../utils/mixins' as *;
-@use '../utils/variables' as *;
-
 $colors:
-    'one' red,
+    'one' aqua,
     'two' blue,
     'three' green;
 
@@ -30,6 +27,15 @@ $colors:
         &--#{$name} {
             background-color: $color;
         }   
+    }
+
+    &:hover {
+        transition: all 0.5s;
+        transition-delay: 0.03s;
+        background-color: rgb(12, 53, 189) ;
+        opacity: 1;
+        border: none;
+        cursor: pointer;
     }
 }
 
